@@ -1,0 +1,22 @@
+input_data = {
+    "company_size": None,  # Missing field
+    "annual_budget": "$10,000 - $50,000",
+    "industry": "Retail",
+    "urgency": "Medium-term (3-6 months)"
+}
+
+def check_incomplete_data(data):
+    required_fields = ["company_size", "annual_budget", "industry", "urgency"]
+    missing_fields = [field for field in required_fields if not data.get(field)]
+    
+    if missing_fields:
+        return {
+            "status": "Incomplete",
+            "missing_fields": missing_fields
+        }
+    else:
+        return {
+            "status": "Complete"
+        }
+
+check_incomplete_data(input_data)

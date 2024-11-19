@@ -1,0 +1,12 @@
+from datetime import datetime, timedelta
+
+def generate_follow_up_event(lead_name, days_later=3):
+    follow_up_time = datetime.now() + timedelta(days=days_later)
+    return {
+        "title": f"Follow-Up with {lead_name}",
+        "date_time": follow_up_time.strftime("%Y-%m-%d %H:%M:%S"),
+        "description": "Review lead details and prepare outreach."
+    }
+
+follow_up_event = generate_follow_up_event("John Doe")
+follow_up_event

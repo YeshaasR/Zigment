@@ -1,0 +1,8 @@
+sales_reps = ["Rep A", "Rep B", "Rep C"]
+
+def assign_sales_rep(lead_index):
+    return sales_reps[lead_index % len(sales_reps)]
+
+
+assigned_rep = assign_sales_rep(4)  # Returns "Rep B"
+assigned_rep

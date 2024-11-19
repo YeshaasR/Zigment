@@ -1,0 +1,9 @@
+def is_high_value_lead(data):
+    high_value_criteria = (
+        data["annual_budget"] in ["$50,001 - $100,000", "More than $100,000"] or
+        data["company_size"] == "1000+ employees"
+    )
+    return high_value_criteria
+
+high_value_status = is_high_value_lead(input_data)
+high_value_status  # Returns True or False

@@ -1,0 +1,16 @@
+from datetime import datetime, timedelta
+import pytz
+
+lead_data = {
+    "timezone": "Asia/Kolkata",  # Example time zone
+    "urgency": "Immediate (within 1 month)"
+}
+
+def adjust_to_timezone(lead):
+
+    lead_timezone = pytz.timezone(lead["timezone"])
+    current_time = datetime.now(pytz.utc)
+    adjusted_time = current_time.astimezone(lead_timezone)
+    return adjusted_time.strftime("%Y-%m-%d %H:%M:%S")
+
+adjust_to_timezone(lead_data)

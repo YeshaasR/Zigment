@@ -1,0 +1,9 @@
+import re
+
+comments = "Looking for a budget-friendly SaaS solution for tech needs."
+
+def extract_keywords(text):
+    keywords = re.findall(r"\b(budget-friendly|SaaS|tech|needs)\b", text.lower())
+    return keywords
+
+extract_keywords(comments)
